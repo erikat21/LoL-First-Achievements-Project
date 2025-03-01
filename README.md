@@ -35,7 +35,7 @@ with summary data. For this project I'll be focusing on a subset of the original
 data set containing only the team rows (25,098) and 12 of the columns. Here is a
 brief introduction to the columns essential for my analysis:
 
-- **side**: This designates what side of the map a team was on, distinguishing
+- <mark>side</mark>>: This designates what side of the map a team was on, distinguishing
 between the "blue" and "red" side.
 - **league**: This designates the specific league tournament the match took place 
 in. 
