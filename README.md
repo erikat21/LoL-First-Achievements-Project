@@ -84,9 +84,23 @@ Below is the head of my team_data dataframe.
 | Red    | LCKC     | Liiv SANDBOX Youth       |      16 |        3 |        1 |             1 |              1 |              0 |             1 |             1 |                1 |
 | Blue   | LPL      | Oh My God                |      13 |        6 |        1 |             0 |            nan |            nan |           nan |           nan |              nan |
 
-## Univariate Analysis
-## Bivariate Analysis
-## Integrating Aggregates 
+Note: I kept nan values for missingness assessment later in the project
+## Exploratory Data Analysis
+In my exploratory Data Analysis I will perform univariate analysis to examine the
+distribution of single variable. Then I will perform bivariate analysis to examine the 
+relationship between multiple variables and finally grouped data to examine aggregate 
+statistics.
+### Univariate Analysis
+<iframe
+	src = "assets/Univariate_plot.html"
+	width = "800"
+	height = "600"
+	frameborder = "0"
+></iframe>
+
+### Bivariate Analysis
+
+### Grouping and Aggregates 
 
 # Assessment of Missingness
 
