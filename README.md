@@ -12,13 +12,15 @@ starting with exploratory data analysis including the missingness of values, the
 hypothesis testing, creating models for a prediction problem, and concludes with 
 a fairness analysis. The primary focus of the project is to investigate the 
 significance of the first achievements gained throughout the game and its impact 
-on outcomes. 
+on outcomes.
+
 League of Legends (LoL) is a multiplayer online battle arena game developed by 
 Riot Games and played by millions worldwide. In the game there are many first 
 achievements that can be gained by a side including "first blood", "first dragon",
 "first herald", "first baron", "first tower", and "first midtower". These achievements
 can set the tone throughout the match and holds significant weight in the outcome 
 of the match.
+
 The central question I am interested in investigating is: **How does gaining the 
 first achievements (first blood, first dragon, first herald, first tower, first 
 baron, first midtower) impact the outcome?** I will build a prediction model to 
