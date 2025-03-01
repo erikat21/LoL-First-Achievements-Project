@@ -105,6 +105,18 @@ to the outcome.
 ></iframe>
 
 ### Bivariate Analysis
+For this analysis I examined the distribution of match results based on each first 
+achievemnt. The plot below shows that teams tend to win more than lose the match after
+gaining the achievement. Some of the first achievements such as "first_baron" seems 
+to have significant more wins than losses compared to the other achievements. This 
+shows there may be a relationship between match outcomes and first achievements,
+later we will look into this relationship more.
+<iframe
+	src = "assets/Biivariate_plot.html"
+	width = "800"
+	height = "600"
+	frameborder = "0"
+></iframe>
 
 ### Grouping and Aggregates 
 
