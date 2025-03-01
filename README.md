@@ -77,7 +77,7 @@ no conversions were needed.
 Below is the head of my team_data dataframe.
 
 | side   | league   | teamname                 |   kills |   deaths |   result |   first_blood |   first_dragon |   first_herald |   first_baron |   first_tower |   first_midtower |
-|--------|----------|--------------------------|---------|----------|----------|---------------|----------------|----------------|---------------|---------------|------------------|
+|:-------|:---------|:-------------------------|--------:|---------:|---------:|--------------:|---------------:|---------------:|--------------:|--------------:|-----------------:|
 | Blue   | LCKC     | BRION Challengers        |       9 |       19 |        0 |             1 |              0 |              1 |             0 |             1 |                1 |
 | Red    | LCKC     | Nongshim Esports Academy |      19 |        9 |        1 |             0 |              1 |              0 |             0 |             0 |                0 |
 | Blue   | LCKC     | T1 Esports Academy       |       3 |       16 |        0 |             0 |              0 |              1 |             0 |             0 |                0 |
