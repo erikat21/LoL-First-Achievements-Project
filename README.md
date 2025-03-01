@@ -35,28 +35,28 @@ with summary data. For this project I'll be focusing on a subset of the original
 data set containing only the team rows (25,098) and 12 of the columns. Here is a
 brief introduction to the columns essential for my analysis:
 
-- ==side==: This designates what side of the map a team was on, distinguishing
+- **side**: This designates what side of the map a team was on, distinguishing
 between the "blue" and "red" side.
-- ==league==: This designates the specific league tournament the match took place 
+- **league**: This designates the specific league tournament the match took place 
 in. 
-- ==teamname==: This designates the professional team that played the match.
-- ==kills==: This quantifies the total number of enemy champions the team killed
+- **teamname**: This designates the professional team that played the match.
+- **kills**: This quantifies the total number of enemy champions the team killed
 during the match.
-- ==deaths==: This quantifies the total number of champions on the team that died 
+- **deaths**: This quantifies the total number of champions on the team that died 
 during the match.
-- ==result==: This designates the outcome of a match, 1 indicates the team won and 
+- **result**: This designates the outcome of a match, 1 indicates the team won and 
 0 indicates the team lost.
-- ==first_blood==: This binary column indicates 1 if the team gained first blood- 
+- **first_blood**: This binary column indicates 1 if the team gained first blood- 
 the first kill- of the match and 0 otherwise. 
-- ==first_dragon==: This binary column indicates 1 if the team gained the first dragon
+- **first_dragon**: This binary column indicates 1 if the team gained the first dragon
 of the match and 0 otherwise.
-- ==first_herald==: This binary column indicates 1 if the team gained the first herald 
+- **first_herald**: This binary column indicates 1 if the team gained the first herald 
 of the match and 0 otherwise.
-- ==first_baron==: This binary column indicates 1 if the team gained the first baron 
+- **first_baron**: This binary column indicates 1 if the team gained the first baron 
 of the match and 0 otherwise.
-- ==first_tower==: This binary column indicates 1 if the team destroyed the first tower
+- **first_tower**: This binary column indicates 1 if the team destroyed the first tower
 of the match and 0 otherwise.
-- ==first_midtower==: This binary column indicates 1 if the team destroys the first
+- **first_midtower**: This binary column indicates 1 if the team destroys the first
 midtower of the match and 0 otherwise.
 
 # Data Cleaning and Exploratory Data Analysis
