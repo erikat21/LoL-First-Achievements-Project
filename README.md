@@ -112,7 +112,7 @@ to have significant more wins than losses compared to the other achievements. Th
 shows there may be a relationship between match outcomes and first achievements,
 later we will look into this relationship more.
 <iframe
-	src = "assets/Biivariate_plot.html"
+	src = "assets/Bivariate_plot.html"
 	width = "800"
 	height = "600"
 	frameborder = "0"
