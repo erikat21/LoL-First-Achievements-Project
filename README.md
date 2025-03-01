@@ -35,7 +35,7 @@ with summary data. For this project I'll be focusing on a subset of the original
 data set containing only the team rows (25,098) and 12 of the columns. Here is a
 brief introduction to the columns essential for my analysis:
 
-- <mark>side</mark>>: This designates what side of the map a team was on, distinguishing
+- **side**: This designates what side of the map a team was on, distinguishing
 between the "blue" and "red" side.
 - **league**: This designates the specific league tournament the match took place 
 in. 
@@ -75,8 +75,9 @@ my columns to see if I needed to conduct any data type conversions and found tha
 no conversions were needed. 
 
 Below is the head of my team_data dataframe.
+
 | side   | league   | teamname                 |   kills |   deaths |   result |   first_blood |   first_dragon |   first_herald |   first_baron |   first_tower |   first_midtower |
-|:-------|:---------|:-------------------------|--------:|---------:|---------:|--------------:|---------------:|---------------:|--------------:|--------------:|-----------------:|
+|--------|----------|--------------------------|---------|----------|----------|---------------|----------------|----------------|---------------|---------------|------------------|
 | Blue   | LCKC     | BRION Challengers        |       9 |       19 |        0 |             1 |              0 |              1 |             0 |             1 |                1 |
 | Red    | LCKC     | Nongshim Esports Academy |      19 |        9 |        1 |             0 |              1 |              0 |             0 |             0 |                0 |
 | Blue   | LCKC     | T1 Esports Academy       |       3 |       16 |        0 |             0 |              0 |              1 |             0 |             0 |                0 |
