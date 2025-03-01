@@ -91,6 +91,12 @@ distribution of single variable. Then I will perform bivariate analysis to exami
 relationship between multiple variables and finally grouped data to examine aggregate 
 statistics.
 ### Univariate Analysis
+For this analysis I created a new column that contains the total number of first 
+achievements a team gained during the match. The plot below shows the distribution 
+from 0-6 total first achievements that teams can gain for their side in a match.
+It appears like it is more rare to achieve all 6 but more common to achieve 1. This 
+could give some insight to team strategy and the importance of gaining achievements 
+to the outcome.
 <iframe
 	src = "assets/Univariate_plot.html"
 	width = "800"
