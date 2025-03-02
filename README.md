@@ -134,6 +134,41 @@ strategy and what achievements teams focus more or less on achieving.
 |      0.25     |      0.25     |       0.625    |       0.375    |         0.25     |      0.375    |
 
 # Assessment of Missingness
+## Not Missing at Random (NMAR) Analysis
+Several columns in my dataframe have missing values. After looking through the 
+missing values I do not believe there are any columns that are NMAR. The values 
+that are missing look to be completely random or can be explained by another column.
+
+## Missingness Dependency
+After examining the missing values I decided to investigate if the missingness 
+in the first_dragon column depends on the league column. To test the missingness 
+I'll perform a permutation test with a significance level of 0.05 and Total Variance 
+Distance (TVD) as my test statistic.
+**Null hypothesis**: The distribution of league when first_dragon is missing is the 
+same as the distribtion of league when first_dragon is not missing.
+**Alternative Hypothesis**: The distribution of league when first_dragon is missing 
+is not the same as the distribution of league when first_dragon is not missing.
+Below is the first few rows of a pivot table showing the distribution of league 
+when first_dragon is missing and not missing.
+|      False |      True |
+|-----------:|----------:|
+| 0          | 0.0390914 |
+| 0.0228041  | 0         |
+| 0.0202703  | 0         |
+| 0.00713213 | 0         |
+| 0.00243994 | 0         |
+After I ran a permutation test by shuffling league 500 times to collect 500 simulated 
+TVD values. I got an observed TVD value of 0.992604 and a p-value of 0.0. Since my 
+p-value of 0.0 is less than my significance level of 0.05 I reject the null in favor 
+of the alternative suggesting the missingness of first_dragon is dependent on the 
+league column, indicating that some leagues may have more frequently missing values. 
+Below is a plot of the empirical distribution of TVD's from my permutation test.
+<iframe
+	src = "assets/Missingness_plot.html"
+	width = "800"
+	height = "600"
+	frameborder = "0"
+></iframe>
 
 # Hypothesis Testing
 
