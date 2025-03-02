@@ -269,10 +269,27 @@ It will predict the result of a match given the first achievements the team has
 (first_blood, first_dragon, first_herald, first_baron, first_tower, first_midtower) 
 which I'll know at the time of my prediction since the data is collected during 
 the game and before the match ends. To evaluate my model I'll be using accuracy 
-since my dataset is well_balanced in terms of results so it should give a fair 
+since my dataset is well balanced in terms of results so it should give a fair 
 representation of how well my model does at predicting.
 
 # Baseline Model
+For my baseline model I am using logistic regression since it is a simple and 
+interpretable model for binary classification which is suitable to predict 
+whether a team won or loss based on in game achievements. Since I have a large 
+dataset I split my data into 2 parts: 80% training data and 20% testing data; 
+this is a common split that ensures the model is trained on a large enough portion 
+of the data while having a sufficient portion to test on. The features I 
+am using are **first_blood, first_dragon, first_herald, first_baron, first_tower, 
+first_midtower**. All of these columns are nominal categorical variables already 
+in binary form so no encoding is necessary to convert the values.
+
+After fitting my data, my accuracy score is 0.84 This means my model is able to 
+correctly predict 84% of data. Although accuracy is a good metric since my dataset 
+is balanced, I checked the f1 score to check the balance between precision and recall
+and got .84. Since the accuracy and f1 scores are equal my model had a good balance 
+between the 2 metrics. Based on the accuracy and f1 score I would say my model is good 
+but it can use improvements since it is in the 80's, an accuracy in the 90's would 
+be better.
 
 # Final Model
 
