@@ -68,7 +68,7 @@ only the rows representing the summary data for a team's match since my focus is
 the outcome of the team as a whole. Then I kept only the revelant columns: **side**, 
 **league**, **teamname**, **kills**, **deaths**, **result**, **firstblood**, 
 **firstdragon**, **firstherald**, **firstbaron**, **firsttower**, **firstmidtower**.
-To make it easier to read I renamed the columns that start with "first" so no they 
+To make it easier to read I renamed the columns that start with "first" so now they 
 are: **first_blood**, **first_dragon**, **first_herald**, **first_baron**, 
 **first_tower**, **first_midtower**. Lastly I checked the data types for each of 
 my columns to see if I needed to conduct any data type conversions and found that 
@@ -202,6 +202,48 @@ Below is a plot of the empirical distribution of TVD's from my permutation test.
 ></iframe>
 
 # Hypothesis Testing
+Now that I've explored and analyzed my dataset I will be addressing the primary 
+focus of this project which is investigating the significance of first achievements
+on match outcomes. For my hypothesis test I will be testing whether there is a significant 
+difference in the distribution of wins for teams that have more or less first achievements 
+gained. To investigate this I will be using the following hypotheses, significance 
+level, and test statistic.
+**Null Hypothesis**: The distribution of wins is the same for teams that gain more 
+first achievements and teams that gain fewer first achievements.
+**Alternative Hypothesis**: The distribution of wins is **not** the same for teams 
+that gain more first achievements and teams that gain fewer first achievements.
+**Significance Level**: 0.05
+**Test Statistic**: Kolmogorov-Smirnov test (K-S test)
+I chose this significance level because it is the typical level used in hypothesis 
+tests, and decided on using the K-S test because it is flexible in not assuming a
+normal distribution and is used to see if two samples come from the same distribution 
+based on not just the central tendency but the entire distribution.
+For this test my two samples are more first achievements which refers to 3 or 
+more achievements and less first achievements which refers to less than 3 achievements. 
+I chose to do a permutation test because I'm testing if the two samples come from 
+the same distribution. 
+
+To properly conduct the test rather than removing rows with missing values I used 
+probablistic imputation for each first achievement column. I then created a new column
+"total_first_achievements" in order to split my dataset into two groups, high achievers 
+(more first achievements) and low achievers (less first achievements).
+
+I found my observed test statistic of 0.54. Then I shuffled the results 500 times 
+to collect 500 simulated K-S values and got a p-value of 0.0. Since the p-value 
+I found (0.0) is less than my significance level (0.05) I reject the null hypothesis
+in favor of the alternative. This suggests that the distribution of wins is **not** 
+the same for teams with more achievements and less achievements, meaning the number 
+of first achievements may have a significant impact on match outcomes. 
+
+Below is a plot showing the observed K-S value against an empirical distribution 
+of K-S values from the permutation test.
+<iframe
+	src = "assets/Hypothesis_plot.html"
+	width = "800"
+	height = "600"
+	frameborder = "0"
+></iframe>
+
 
 # Framing a Prediction Problem
 
