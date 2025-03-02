@@ -280,7 +280,7 @@ dataset I split my data into 2 parts: 80% training data and 20% testing data;
 this is a common split that ensures the model is trained on a large enough portion 
 of the data while having a sufficient portion to test on. The features I 
 am using are **first_blood, first_dragon, first_herald, first_baron, first_tower, 
-first_midtower**. All of these columns are nominal categorical variables already 
+first_midtower**. All 6 of these columns are nominal categorical variables already 
 in binary form so no encoding is necessary to convert the values.
 
 After fitting my data, my accuracy score is 0.84 This means my model is able to 
@@ -292,5 +292,30 @@ but it can use improvements since it is in the 80's, an accuracy in the 90's wou
 be better.
 
 # Final Model
+In my final model to improve on my baseline model I added two features: **kills** 
+and **deaths**. I added these two features because along with achievements, the 
+number of kills and deaths a team has is a good indication of if a team is winning 
+or losing. Although more kills doesn't always mean a team will win it is more likely
+the team with more kills wins the match. Similarly more deaths doesn't always mean 
+a team will lose but it is more likley that a team with a higeh rnumber of deaths will
+lose the match. The number of kills and deaths reflects how well a team does in fights
+which is crucial to gain advantages in the game. Therefore I thought adding these 
+two features will provide valuable predictive power in my final model.
+
+For my final model instead of using Logistic Regression like in my baseline model 
+I chose to use Random Forest Classifier because it is more powerful and used for 
+more complex relationships between features with non-linear relationships. The two 
+features I added are both quantitative features so I used StandardScaler Transformer
+to standardize the values in the two columns. To tune the hyperparameters for my 
+model algorithm I used GridSearchCV to find the best max depth and number of estimators. 
+These two hyperparameters help control variance and avoid overfitting the training set 
+and I found the best combination to be 10 for max depth and 100 for the number of 
+estimators.
+
+The accuracy score for my final model is 0.95 so now it correctly predicts 95% of 
+my data. This is a 0.11 increase from my baseline model which is a great improvemnet, 
+closer to predicting 100% of the data correctly. Like with my baseline model I 
+checked the f1 score to be sure and got a score of 0.95 so both accuracy and f1 
+score suggest this final model is effective in predicting match results.
 
 # Fairneess Analysis
