@@ -145,10 +145,13 @@ After examining the missing values I decided to investigate if the missingness
 in the first_dragon column depends on the league column. To test the missingness 
 I'll perform a permutation test with a significance level of 0.05 and Total Variance 
 Distance (TVD) as my test statistic.
+
 **Null hypothesis**: The distribution of league when first_dragon is missing is the 
 same as the distribtion of league when first_dragon is not missing.
+
 **Alternative Hypothesis**: The distribution of league when first_dragon is missing 
 is not the same as the distribution of league when first_dragon is not missing.
+
 Below is the first few rows of a pivot table showing the distribution of league 
 when first_dragon is missing (True) and not missing (False).
 
@@ -177,10 +180,13 @@ Below is a plot of the empirical distribution of TVD's from my permutation test.
 The second permutatation test I performed is to investigate if the missingness of
 first_blood values depends on the side column. I chose a significance level of 0.05
 and TVD as my test statistic.
+
 **Null hypothesis**: The distribution of side when first_blood is missing is the same 
 as the distribtion of side when first_blood is not missing.
+
 **Alternative Hypothesis**: The distribution of side when first_blood is missing is 
 not the same as the distribution of side when first_blood is not missing.
+
 Below is a pivot table showing the distribution of first_blood missingness based on 
 either the blue or red side.
 
@@ -208,12 +214,17 @@ on match outcomes. For my hypothesis test I will be testing whether there is a s
 difference in the distribution of wins for teams that have more or less first achievements 
 gained. To investigate this I will be using the following hypotheses, significance 
 level, and test statistic.
+
 **Null Hypothesis**: The distribution of wins is the same for teams that gain more 
 first achievements and teams that gain fewer first achievements.
+
 **Alternative Hypothesis**: The distribution of wins is **not** the same for teams 
 that gain more first achievements and teams that gain fewer first achievements.
+
 **Significance Level**: 0.05
+
 **Test Statistic**: Kolmogorov-Smirnov test (K-S test)
+
 I chose this significance level because it is the typical level used in hypothesis 
 tests, and decided on using the K-S test because it is flexible in not assuming a
 normal distribution and is used to see if two samples come from the same distribution 
@@ -232,8 +243,9 @@ I found my observed test statistic of 0.54. Then I shuffled the results 500 time
 to collect 500 simulated K-S values and got a p-value of 0.0. Since the p-value 
 I found (0.0) is less than my significance level (0.05) I reject the null hypothesis
 in favor of the alternative. This suggests that the distribution of wins is **not** 
-the same for teams with more achievements and less achievements, meaning the number 
-of first achievements may have a significant impact on match outcomes. 
+the same for teams with more achievements and teams with less achievements, 
+meaning the number of first achievements may have a significant impact on match 
+outcomes. 
 
 Below is a plot showing the observed K-S value against an empirical distribution 
 of K-S values from the permutation test.
@@ -246,6 +258,19 @@ of K-S values from the permutation test.
 
 
 # Framing a Prediction Problem
+From my hypothesis test, I found that the number of first achievements may have 
+a significant impact on match results. Based on this I'll be building a model for 
+the following **prediction problem:**
+
+Are we able to predict if a team won or lost based on their first achievements?
+
+Given my prediction problem I'll be building a classifier for binary classification.
+It will predict the result of a match given the first achievements the team has
+(first_blood, first_dragon, first_herald, first_baron, first_tower, first_midtower) 
+which I'll know at the time of my prediction since the data is collected during 
+the game and before the match ends. To evaluate my model I'll be using accuracy 
+since my dataset is well_balanced in terms of results so it should give a fair 
+representation of how well my model does at predicting.
 
 # Baseline Model
 
