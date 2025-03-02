@@ -149,14 +149,15 @@ same as the distribtion of league when first_dragon is not missing.
 **Alternative Hypothesis**: The distribution of league when first_dragon is missing 
 is not the same as the distribution of league when first_dragon is not missing.
 Below is the first few rows of a pivot table showing the distribution of league 
-when first_dragon is missing and not missing.
-|      False |      True |
-|-----------:|----------:|
-| 0          | 0.0390914 |
-| 0.0228041  | 0         |
-| 0.0202703  | 0         |
-| 0.00713213 | 0         |
-| 0.00243994 | 0         |
+when first_dragon is missing (True) and not missing (False).
+| league   |      False |      True |
+|:---------|-----------:|----------:|
+| ASCI     | 0          | 0.0390914 |
+| CBLOL    | 0.0228041  | 0         |
+| CBLOLA   | 0.0202703  | 0         |
+| CDF      | 0.00713213 | 0         |
+| CT       | 0.00243994 | 0         |
+
 After I ran a permutation test by shuffling league 500 times to collect 500 simulated 
 TVD values. I got an observed TVD value of 0.992604 and a p-value of 0.0. Since my 
 p-value of 0.0 is less than my significance level of 0.05 I reject the null in favor 
