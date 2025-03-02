@@ -140,6 +140,7 @@ missing values I do not believe there are any columns that are NMAR. The values
 that are missing look to be completely random or can be explained by another column.
 
 ## Missingness Dependency
+### League and First Dragon Missingness Analysis
 After examining the missing values I decided to investigate if the missingness 
 in the first_dragon column depends on the league column. To test the missingness 
 I'll perform a permutation test with a significance level of 0.05 and Total Variance 
@@ -167,6 +168,34 @@ league column, indicating that some leagues may have more frequently missing val
 Below is a plot of the empirical distribution of TVD's from my permutation test.
 <iframe
 	src = "assets/Missingness_plot.html"
+	width = "800"
+	height = "600"
+	frameborder = "0"
+></iframe>
+
+### Side and First Blood Missingness Analysis
+The second permutatation test I performed is to investigate if the missingness of
+first_blood values depends on the side column. I chose a significance level of 0.05
+and TVD as my test statistic.
+**Null hypothesis**: The distribution of side when first_blood is missing is the same 
+as the distribtion of side when first_blood is not missing.
+**Alternative Hypothesis**: The distribution of side when first_blood is missing is 
+not the same as the distribution of side when first_blood is not missing.
+Below is a pivot table showing the distribution of first_blood missingness based on 
+either the blue or red side.
+
+| side   |   False |   True |
+|:-------|--------:|-------:|
+| Blue   |     0.5 |    0.5 |
+| Red    |     0.5 |    0.5 |
+
+After I ran a permutation test by shuffling side 500 times to collect 500 simulated 
+TVD values. I got an observed TVD of 0 and a p-value of 1. Since my p-value of 1 
+is greater than my significance level of 0.05 I fail to reject the null indicating 
+that side has no affect on the missingness of first_blood.
+Below is a plot of the empirical distribution of TVD's from my permutation test.
+<iframe
+	src = "assets/Missingness2_plot.html"
 	width = "800"
 	height = "600"
 	frameborder = "0"
