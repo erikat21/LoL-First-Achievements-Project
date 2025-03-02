@@ -150,6 +150,7 @@ same as the distribtion of league when first_dragon is not missing.
 is not the same as the distribution of league when first_dragon is not missing.
 Below is the first few rows of a pivot table showing the distribution of league 
 when first_dragon is missing (True) and not missing (False).
+
 | league   |      False |      True |
 |:---------|-----------:|----------:|
 | ASCI     | 0          | 0.0390914 |
