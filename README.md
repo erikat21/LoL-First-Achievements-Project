@@ -119,6 +119,19 @@ later we will look into this relationship more.
 ></iframe>
 
 ### Grouping and Aggregates 
+For this analysis I created a pivot table below with a row for each unique team that 
+participated in 2022 to find the average number of time a team gained a first 
+achievement. By looking at the values we can see if some teams favor one achievemnet
+or are better at getting it during their matches. This can give insight into game 
+strategy and what achievements teams focus more or less on achieving. 
+
+|   first_baron |   first_blood |   first_dragon |   first_herald |   first_midtower |   first_tower |
+|--------------:|--------------:|---------------:|---------------:|-----------------:|--------------:|
+|      0.526316 |      0.473684 |       0.473684 |       0.486842 |         0.486842 |      0.421053 |
+|      0.487179 |      0.495726 |       0.376068 |       0.444444 |         0.65812  |      0.487179 |
+|      0.649351 |      0.597403 |       0.311688 |       0.467532 |         0.714286 |      0.597403 |
+|      0.666667 |      0.5      |       0.416667 |       0.333333 |         0.5      |      0.583333 |
+|      0.25     |      0.25     |       0.625    |       0.375    |         0.25     |      0.375    |
 
 # Assessment of Missingness
 
