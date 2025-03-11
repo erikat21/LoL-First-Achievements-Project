@@ -165,7 +165,7 @@ when **first_dragon** is missing (True) and not missing (False).
 
 After I ran a permutation test by shuffling **league** 500 times to collect 500 simulated 
 TVD values. I got an **observed TVD value of 0.992604** and a **p-value of 0.0**. Since my 
-p-value of 0.0 is less than my significance level of 0.05 I **reject** the null in favor 
+p-value of 0.0 is less than my significance level of 0.05, I **reject** the null in favor 
 of the alternative suggesting the missingness of **first_dragon** is dependent on the 
 **league** column, indicating that some leagues may have more frequently missing values. 
 
