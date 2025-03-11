@@ -165,7 +165,7 @@ when **first_dragon** is missing (True) and not missing (False).
 
 After I ran a permutation test by shuffling **league** 500 times to collect 500 simulated 
 TVD values. I got an **observed TVD value of 0.992604** and a **p-value of 0.0**. Since my 
-p-value of 0.0 is less than my significance level of 0.05 I reject the null in favor 
+p-value of 0.0 is less than my significance level of 0.05 I **reject** the null in favor 
 of the alternative suggesting the missingness of **first_dragon** is dependent on the 
 **league** column, indicating that some leagues may have more frequently missing values. 
 
@@ -198,7 +198,7 @@ either the blue or red side.
 
 After I ran a permutation test by shuffling **side** 500 times to collect 500 simulated 
 TVD values. I got an **observed TVD of 0** and a **p-value of 1**. Since my p-value of 1 
-is greater than my significance level of 0.05, I fail to reject the null indicating 
+is greater than my significance level of 0.05, I **fail to reject** the null indicating 
 that **side** has no affect on the missingness of **first_blood**.
 
 Below is a plot of the empirical distribution of TVD's from my permutation test.
@@ -243,7 +243,7 @@ probablistic imputation for each first achievement column. I then created a new 
 
 I found my **observed test statistic of 0.54**. Then I shuffled the **result** column 500 times 
 to collect 500 simulated K-S values and got a **p-value of 0.0**. Since the p-value 
-I found (0.0) is less than my significance level (0.05) I reject the null hypothesis
+I found (0.0) is less than my significance level (0.05) I **reject** the null hypothesis
 in favor of the alternative. This suggests that the distribution of wins is **not** 
 the same for teams with more achievements and teams with less achievements, 
 meaning the number of first achievements may have a significant impact on match 
@@ -348,7 +348,7 @@ difference** value of **-0.024**. To run my permutation test I created a new col
 **is_low** to differentiate between the low and high kill teams. I then shuffled 
 the **is_low** column 500 times to collect 500 simulated difference in precision
 values. Given a **p-value of 0.998** which is greater than my significance level of 0.05, 
-I fail to reject the null hypothesis which suggest my model is fair for teams 
+I **fail to reject** the null hypothesis which suggest my model is fair for teams 
 with low and high number of kills. 
 
 Below is a plot showing the observed difference in precision value against an 
