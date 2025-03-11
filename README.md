@@ -168,6 +168,7 @@ TVD values. I got an observed TVD value of 0.992604 and a p-value of 0.0. Since 
 p-value of 0.0 is less than my significance level of 0.05 I reject the null in favor 
 of the alternative suggesting the missingness of first_dragon is dependent on the 
 league column, indicating that some leagues may have more frequently missing values. 
+
 Below is a plot of the empirical distribution of TVD's from my permutation test.
 <iframe
 	src = "assets/Missingness_plot.html"
@@ -199,6 +200,7 @@ After I ran a permutation test by shuffling side 500 times to collect 500 simula
 TVD values. I got an observed TVD of 0 and a p-value of 1. Since my p-value of 1 
 is greater than my significance level of 0.05 I fail to reject the null indicating 
 that side has no affect on the missingness of first_blood.
+
 Below is a plot of the empirical distribution of TVD's from my permutation test.
 <iframe
 	src = "assets/Missingness2_plot.html"
@@ -319,3 +321,41 @@ checked the f1 score to be sure and got a score of 0.95 so both accuracy and f1
 score suggest this final model is effective in predicting match results.
 
 # Fairneess Analysis
+In this section I'll be assessing if my model is fair for teams with a low number
+of kills versus teams with a high number of kills. Specifically I'll be answering 
+the question: Does my model perform worse for teams with less than 14 kills than
+it does for teams with 14 or more kills? I chose to look at these groups because 
+the median number of kills in my dataset is 14 and typically if you see a team has
+a high number of kills you would predict that they are the winner but some games 
+can end with low number of kills on both sides. To evaluate the fairness of my model 
+between the two groups I'll run a permutation test and examine the difference in 
+precision between the two groups.
+
+**Null Hypothesis**: My model is fair. Its precision for teams with low number of 
+kills and high number of kills are roughly the same, and any differences are due 
+to random chance.
+
+**Alternative Hypothesis**: My model is unfair. Its precision for teams with low 
+number of kills is lower than its precision for teams with high number of kills.
+
+**Test Statistic**: Difference in precision for teams who have less than 14 kills
+and teams with 14 or more kills.
+
+**Significance Level**: 0.05
+
+I split my dataset into two groups, low kills and high kills, and found an observed 
+difference value of -0.024. To run my permutation test I created a new column 
+**is_low** to differentiate between the low and high kill teams. I then shuffled 
+the **is_low** column 500 times to collect 500 simulated difference in precision
+values. Given a p-value of 0.998 which is greater than my significance level of 0.05, 
+I fail to reject the null hypothesis which suggest my model is fair for teams 
+with low and high number of kills. 
+
+Below is a plot showing the observed difference in precision value against an 
+empirical distribution of difference in precision values from the permutation test.
+<iframe
+	src = "assets/fairness_plot.html"
+	width = "800"
+	height = "600"
+	frameborder = "0"
+></iframe>
