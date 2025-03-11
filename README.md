@@ -16,8 +16,8 @@ on outcomes.
 
 League of Legends (LoL) is a multiplayer online battle arena game developed by 
 Riot Games and played by millions worldwide. In the game there are many first 
-achievements that can be gained by a side including "first blood", "first dragon",
-"first herald", "first baron", "first tower", and "first midtower". These achievements
+achievements that can be gained by a side including **"first blood", "first dragon",
+"first herald", "first baron", "first tower", and "first midtower"**. These achievements
 can set the tone throughout the match and holds significant weight in the outcome 
 of the match.
 
@@ -107,7 +107,7 @@ to the outcome.
 ### Bivariate Analysis
 For this analysis I examined the distribution of match results based on each first 
 achievemnt. The plot below shows that teams tend to win more than lose the match after
-gaining the achievement. Some of the first achievements such as "first_baron" seems 
+gaining the achievement. Some of the first achievements such as **"first_baron"** seems 
 to have significant more wins than losses compared to the other achievements. This 
 shows there may be a relationship between match outcomes and first achievements,
 later we will look into this relationship more.
@@ -143,17 +143,17 @@ that are missing look to be completely random or can be explained by another col
 ### League and First Dragon Missingness Analysis
 After examining the missing values I decided to investigate if the missingness 
 in the first_dragon column depends on the league column. To test the missingness 
-I'll perform a permutation test with a significance level of 0.05 and Total Variance 
+I'll perform a permutation test with a significance level of 0.05 and Total Variation
 Distance (TVD) as my test statistic.
 
-**Null hypothesis**: The distribution of league when first_dragon is missing is the 
-same as the distribtion of league when first_dragon is not missing.
+**Null hypothesis**: The distribution of **league** when **first_dragon** is missing is the 
+same as the distribtion of **league** when **first_dragon** is not missing.
 
-**Alternative Hypothesis**: The distribution of league when first_dragon is missing 
-is not the same as the distribution of league when first_dragon is not missing.
+**Alternative Hypothesis**: The distribution of **league** when **first_dragon** is missing 
+is not the same as the distribution of **league** when **first_dragon** is not missing.
 
-Below is the first few rows of a pivot table showing the distribution of league 
-when first_dragon is missing (True) and not missing (False).
+Below is the first few rows of a pivot table showing the distribution of **league** 
+when **first_dragon** is missing (True) and not missing (False).
 
 | league   |      False |      True |
 |:---------|-----------:|----------:|
@@ -163,11 +163,11 @@ when first_dragon is missing (True) and not missing (False).
 | CDF      | 0.00713213 | 0         |
 | CT       | 0.00243994 | 0         |
 
-After I ran a permutation test by shuffling league 500 times to collect 500 simulated 
-TVD values. I got an observed TVD value of 0.992604 and a p-value of 0.0. Since my 
+After I ran a permutation test by shuffling **league** 500 times to collect 500 simulated 
+TVD values. I got an **observed TVD value of 0.992604** and a **p-value of 0.0**. Since my 
 p-value of 0.0 is less than my significance level of 0.05 I reject the null in favor 
-of the alternative suggesting the missingness of first_dragon is dependent on the 
-league column, indicating that some leagues may have more frequently missing values. 
+of the alternative suggesting the missingness of **first_dragon** is dependent on the 
+**league** column, indicating that some leagues may have more frequently missing values. 
 
 Below is a plot of the empirical distribution of TVD's from my permutation test.
 <iframe
@@ -179,16 +179,16 @@ Below is a plot of the empirical distribution of TVD's from my permutation test.
 
 ### Side and First Blood Missingness Analysis
 The second permutatation test I performed is to investigate if the missingness of
-first_blood values depends on the side column. I chose a significance level of 0.05
+**first_blood** values depends on the **side** column. I chose a significance level of 0.05
 and TVD as my test statistic.
 
-**Null hypothesis**: The distribution of side when first_blood is missing is the same 
+**Null hypothesis**: The distribution of **side** when **first_blood** is missing is the same 
 as the distribtion of side when first_blood is not missing.
 
-**Alternative Hypothesis**: The distribution of side when first_blood is missing is 
-not the same as the distribution of side when first_blood is not missing.
+**Alternative Hypothesis**: The distribution of **side** when **first_blood** is missing is 
+not the same as the distribution of **side** when **first_blood** is not missing.
 
-Below is a pivot table showing the distribution of first_blood missingness based on 
+Below is a pivot table showing the distribution of **first_blood** missingness based on 
 either the blue or red side.
 
 | side   |   False |   True |
@@ -196,10 +196,10 @@ either the blue or red side.
 | Blue   |     0.5 |    0.5 |
 | Red    |     0.5 |    0.5 |
 
-After I ran a permutation test by shuffling side 500 times to collect 500 simulated 
-TVD values. I got an observed TVD of 0 and a p-value of 1. Since my p-value of 1 
-is greater than my significance level of 0.05 I fail to reject the null indicating 
-that side has no affect on the missingness of first_blood.
+After I ran a permutation test by shuffling **side** 500 times to collect 500 simulated 
+TVD values. I got an **observed TVD of 0** and a **p-value of 1**. Since my p-value of 1 
+is greater than my significance level of 0.05, I fail to reject the null indicating 
+that **side** has no affect on the missingness of **first_blood**.
 
 Below is a plot of the empirical distribution of TVD's from my permutation test.
 <iframe
@@ -238,11 +238,11 @@ the same distribution.
 
 To properly conduct the test rather than removing rows with missing values I used 
 probablistic imputation for each first achievement column. I then created a new column
-"total_first_achievements" in order to split my dataset into two groups, high achievers 
+**"total_first_achievements"** in order to split my dataset into two groups, high achievers 
 (more first achievements) and low achievers (less first achievements).
 
-I found my observed test statistic of 0.54. Then I shuffled the results 500 times 
-to collect 500 simulated K-S values and got a p-value of 0.0. Since the p-value 
+I found my **observed test statistic of 0.54**. Then I shuffled the **result** column 500 times 
+to collect 500 simulated K-S values and got a **p-value of 0.0**. Since the p-value 
 I found (0.0) is less than my significance level (0.05) I reject the null hypothesis
 in favor of the alternative. This suggests that the distribution of wins is **not** 
 the same for teams with more achievements and teams with less achievements, 
@@ -262,13 +262,13 @@ of K-S values from the permutation test.
 # Framing a Prediction Problem
 From my hypothesis test, I found that the number of first achievements may have 
 a significant impact on match results. Based on this I'll be building a model for 
-the following **prediction problem:**
+the following prediction problem:
 
-Are we able to predict if a team won or lost based on their first achievements?
+**Are we able to predict if a team won or lost based on their first achievements?**
 
 Given my prediction problem I'll be building a classifier for binary classification.
 It will predict the result of a match given the first achievements the team has
-(first_blood, first_dragon, first_herald, first_baron, first_tower, first_midtower) 
+(**first_blood, first_dragon, first_herald, first_baron, first_tower, first_midtower**) 
 which I'll know at the time of my prediction since the data is collected during 
 the game and before the match ends. To evaluate my model I'll be using accuracy 
 since my dataset is well balanced in terms of results so it should give a fair 
@@ -285,10 +285,10 @@ am using are **first_blood, first_dragon, first_herald, first_baron, first_tower
 first_midtower**. All 6 of these columns are nominal categorical variables already 
 in binary form so no encoding is necessary to convert the values.
 
-After fitting my data, my accuracy score is 0.84 This means my model is able to 
+After fitting my data, my **accuracy score** is **0.84**. This means my model is able to 
 correctly predict 84% of data. Although accuracy is a good metric since my dataset 
 is balanced, I checked the f1 score to check the balance between precision and recall
-and got .84. Since the accuracy and f1 scores are equal my model had a good balance 
+and got 0.84. Since the accuracy and f1 scores are equal my model had a good balance 
 between the 2 metrics. Based on the accuracy and f1 score I would say my model is good 
 but it can use improvements since it is in the 80's, an accuracy in the 90's would 
 be better.
@@ -299,7 +299,7 @@ and **deaths**. I added these two features because along with achievements, the
 number of kills and deaths a team has is a good indication of if a team is winning 
 or losing. Although more kills doesn't always mean a team will win it is more likely
 the team with more kills wins the match. Similarly more deaths doesn't always mean 
-a team will lose but it is more likley that a team with a higeh rnumber of deaths will
+a team will lose but it is more likley that a team with a higher number of deaths will
 lose the match. The number of kills and deaths reflects how well a team does in fights
 which is crucial to gain advantages in the game. Therefore I thought adding these 
 two features will provide valuable predictive power in my final model.
@@ -314,8 +314,8 @@ These two hyperparameters help control variance and avoid overfitting the traini
 and I found the best combination to be 10 for max depth and 100 for the number of 
 estimators.
 
-The accuracy score for my final model is 0.95 so now it correctly predicts 95% of 
-my data. This is a 0.11 increase from my baseline model which is a great improvemnet, 
+The **accuracy score** for my final model is **0.95** so now it correctly predicts 95% of 
+my data. This is a **0.11 increase** from my baseline model which is a great improvemnet, 
 closer to predicting 100% of the data correctly. Like with my baseline model I 
 checked the f1 score to be sure and got a score of 0.95 so both accuracy and f1 
 score suggest this final model is effective in predicting match results.
@@ -323,8 +323,8 @@ score suggest this final model is effective in predicting match results.
 # Fairneess Analysis
 In this section I'll be assessing if my model is fair for teams with a low number
 of kills versus teams with a high number of kills. Specifically I'll be answering 
-the question: Does my model perform worse for teams with less than 14 kills than
-it does for teams with 14 or more kills? I chose to look at these groups because 
+the question: **Does my model perform worse for teams with less than 14 kills than
+it does for teams with 14 or more kills?** I chose to look at these groups because 
 the median number of kills in my dataset is 14 and typically if you see a team has
 a high number of kills you would predict that they are the winner but some games 
 can end with low number of kills on both sides. To evaluate the fairness of my model 
@@ -343,11 +343,11 @@ and teams with 14 or more kills.
 
 **Significance Level**: 0.05
 
-I split my dataset into two groups, low kills and high kills, and found an observed 
-difference value of -0.024. To run my permutation test I created a new column 
+I split my dataset into two groups, low kills and high kills, and found an **observed 
+difference** value of **-0.024**. To run my permutation test I created a new column 
 **is_low** to differentiate between the low and high kill teams. I then shuffled 
 the **is_low** column 500 times to collect 500 simulated difference in precision
-values. Given a p-value of 0.998 which is greater than my significance level of 0.05, 
+values. Given a **p-value of 0.998** which is greater than my significance level of 0.05, 
 I fail to reject the null hypothesis which suggest my model is fair for teams 
 with low and high number of kills. 
 
