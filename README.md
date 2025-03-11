@@ -320,7 +320,7 @@ closer to predicting 100% of the data correctly. Like with my baseline model I
 checked the f1 score to be sure and got a score of 0.95 so both accuracy and f1 
 score suggest this final model is effective in predicting match results.
 
-# Fairneess Analysis
+# Fairness Analysis
 In this section I'll be assessing if my model is fair for teams with a low number
 of kills versus teams with a high number of kills. Specifically I'll be answering 
 the question: **Does my model perform worse for teams with less than 14 kills than
